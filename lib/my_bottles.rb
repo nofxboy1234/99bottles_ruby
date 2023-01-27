@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Bottles class
 class Bottles
   def verse(number)
     "#{number} bottles of beer on the wall, " \
