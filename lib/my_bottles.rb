@@ -1,15 +1,14 @@
 class Bottles
   def verse(number)
     if number == 99
-      '99 bottles of beer on the wall, ' \
-      "99 botlles of beer.\n" \
-      'Take one down and pass it around. ' \
-      "98 bottles of beer on the wall.\n"
+      n = 99
     else
-      '3 bottles of beer on the wall, ' \
-      "3 botlles of beer.\n" \
-      'Take one down and pass it around. ' \
-      "2 bottles of beer on the wall.\n"
+      n = 3
     end
+
+    "#{n} bottles of beer on the wall, " \
+    "#{n} botlles of beer.\n" \
+    'Take one down and pass it around. ' \
+    "#{n - 1} bottles of beer on the wall.\n"
   end
 end
