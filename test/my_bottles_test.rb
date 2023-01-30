@@ -83,4 +83,12 @@ class BottlesTest < Minitest::Test
       "99 bottles of beer on the wall.\n"
     assert_equal expected, Bottles.new.verses(2, 0)
   end
+
+  def test_the_whole_song
+    bottles = Bottles.new
+    expected =
+      99.downto(0).collect { |i| bottles.verse(i) }
+        .join("\n")
+    assert_equal expected, bottles.song
+  end
 end
