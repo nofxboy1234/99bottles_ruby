@@ -84,11 +84,6 @@ class BottlesTest < Minitest::Test
     assert_equal expected, Bottles.new.verses(2, 0)
   end
 
-  # def test_the_whole_song
-  #   bottles = Bottles.new
-  #   assert_equal bottles.verses(99, 0), bottles.song
-  # end
-
   def test_the_whole_song
     expected = <<~SONG
       99 bottles of beer on the wall, 99 bottles of beer.
