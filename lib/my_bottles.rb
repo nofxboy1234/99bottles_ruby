@@ -18,6 +18,34 @@ class Bottles
   end
 
   def container(number)
+    BottleNumber.new(number).container(number)
+  end
+
+  def pronoun(number)
+    BottleNumber.new(number).pronoun(number)
+  end
+
+  def quantity(number)
+    BottleNumber.new(number).quantity(number)
+  end
+
+  def action(number)
+    BottleNumber.new(number).action(number)
+  end
+
+  def successor(number)
+    BottleNumber.new(number).successor(number)
+  end
+end
+
+class BottleNumber
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
+  end
+
+  def container(number)
     if number == 1
       'bottle'
     else
