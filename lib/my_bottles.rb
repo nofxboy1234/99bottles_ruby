@@ -14,13 +14,6 @@ class Bottles
     bottle_number = bottle_number_for(number)
     next_bottle_number = bottle_number_for(bottle_number.successor)
 
-    # bottle_number =
-    #   (number.zero? ? BottleNumber0 : BottleNumber).new(number)
-
-    # succ = bottle_number.successor
-    # next_bottle_number =
-    #   (succ.zero? ? BottleNumber0 : BottleNumber).new(succ)
-
     "#{bottle_number} of beer on the wall, ".capitalize +
       "#{bottle_number} of beer.\n" \
       "#{bottle_number.action}, " \
@@ -60,11 +53,7 @@ class BottleNumber
   end
 
   def action
-    if number.zero?
-      'Go to the store and buy some more'
-    else
-      "Take #{pronoun} down and pass it around"
-    end
+    "Take #{pronoun} down and pass it around"
   end
 
   def pronoun
@@ -76,16 +65,20 @@ class BottleNumber
   end
 
   def successor
-    if number.zero?
-      99
-    else
-      number - 1
-    end
+    number - 1
   end
 end
 
 class BottleNumber0 < BottleNumber
   def quantity
     'no more'
+  end
+
+  def action
+    'Go to the store and buy some more'
+  end
+
+  def successor
+    99
   end
 end
