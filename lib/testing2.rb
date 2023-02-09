@@ -11,9 +11,9 @@ class Person
     @weight = 5
   end
 
-  # def self.inherited(subclass)
-  #   subclass.send :undef_method, :weight
-  # end
+  def self.inherited(subclass)
+    subclass.send :undef_method, :weight
+  end
 
   def another_private_method(a, b)
     "another_private_method: a = #{a}, b = #{b}"
@@ -30,6 +30,10 @@ class Spy < Person
   def test
     weight
   end
+
+  def weight
+    @weight * 5
+  end
 end
 
 # puts Person.new.send(:weight) # => 5
@@ -37,5 +41,5 @@ end
 # puts Person.new.a_public_method_that_sends_private_message
 
 # puts Spy.new.send(:weight) #=> Unhelpful undefined method error
-puts Spy.new.test
+p Spy.new.test
 # puts Spy.new.weight
