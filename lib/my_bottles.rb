@@ -74,7 +74,7 @@ class BottleNumber0 < BottleNumber
   BottleNumber.register(self)
 
   def self.handles?(number)
-    number == 0
+    number.zero?
   end
 
   def quantity
