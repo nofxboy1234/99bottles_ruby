@@ -1,4 +1,8 @@
 class A
+  # def self.inherited(subclass)
+  #   subclass.send :undef_method, :a_private_method
+  # end
+
   def a_public_method
     a_private_method
   end
