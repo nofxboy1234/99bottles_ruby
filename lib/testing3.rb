@@ -11,10 +11,11 @@ class A
 end
 
 class B < A
-  def call_private_method
-    a_private_method * 2
+  def a_public_method
+    super
+    144
   end
 end
 
 puts A.new.a_public_method
-puts B.new.call_private_method
+puts B.new.a_public_method

@@ -34,6 +34,7 @@ class BottleNumber
   end
 
   def self.inherited(candidate)
+    super
     register(candidate)
   end
 
