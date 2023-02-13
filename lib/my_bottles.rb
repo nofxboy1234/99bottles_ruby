@@ -2,6 +2,12 @@
 
 # Bottles class
 class Bottles
+  attr_reader :verse_template
+
+  def initialize(verse_template: BottleVerse)
+    @verse_template = verse_template
+  end
+
   def song
     verses(99, 0)
   end
@@ -11,7 +17,7 @@ class Bottles
   end
 
   def verse(number)
-    BottleVerse.new(number).lyrics
+    verse_template.new(number).lyrics
   end
 end
 
