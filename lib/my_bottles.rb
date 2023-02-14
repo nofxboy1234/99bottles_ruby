@@ -23,7 +23,7 @@ end
 
 class BottleVerse
   def self.lyrics(number)
-    new(number).lyrics
+    new(BottleNumber.for(number)).lyrics
   end
 
   attr_reader :number
@@ -33,7 +33,9 @@ class BottleVerse
   end
 
   def lyrics
-    bottle_number = BottleNumber.for(number)
+    # bottle_number = BottleNumber.for(number)
+    bottle_number =
+      (number.is_a?(BottleNumber) ? number : BottleNumber.for(number))
 
     "#{bottle_number} of beer on the wall, ".capitalize +
       "#{bottle_number} of beer.\n" \
